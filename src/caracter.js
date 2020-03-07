@@ -46,22 +46,22 @@ const Caracter = () => {
     return (
         <div className="caracter">
             { (caracterResponses.name === '') 
-            ? <p className="noDataFromAPI"> <span className="name">Name:</span> <span>not stated in API</span></p>
+            ? <p className="noDataFromAPI"> <span className="name">Name:</span> <span className="notStated">not stated in API</span></p>
             : <p className="dataFromAPI name">Name: <span>{caracterResponses.name}</span></p>    
             }
 
             { (caracterResponses.born === '') 
-            ? <p className="noDataFromAPI">Born: <span>not stated in API</span></p>
+            ? <p className="noDataFromAPI">Born: <span className="notStated">not stated in API</span></p>
             : <p className="dataFromAPI">Born: <span>{caracterResponses.born}</span></p>
             }
 
             { (caracterResponses.title === '')
-            ? <p className="noDataFromAPI">Title: <span>not statet in API</span></p>
+            ? <p className="noDataFromAPI">Title: <span className="notStated">not statet in API</span></p>
             : <p className="dataFromAPI">Title: <span>{caracterResponses.title}</span></p>
             }
 
             { (caracterResponses.actor === '')
-            ? <p className="noDataFromAPI">Actor: <span>not stated in API</span></p>
+            ? <p className="noDataFromAPI">Actor: <span className="notStated">not stated in API</span></p>
             : <p className="dataFromAPI">Actor: <span>{caracterResponses.actor}</span></p>
             }
         </div>
