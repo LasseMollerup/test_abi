@@ -3,7 +3,10 @@ import './App.css';
 
 // Components
 import Header from './header';
-import CaracterSection from './caracters'
+import Caracters from './caracters';
+
+
+
 
 
 
@@ -12,7 +15,8 @@ function App() {
     <div className="App">
       <div className='body'>
         <Header/>
-        <CaracterSection/>
+        <Caracters/>
+        {/* <CaracterSection/> */}
       </div>
     </div>
   );

@@ -3,16 +3,23 @@ import axios from 'axios';
 
 const Caracter = (props) => {
 
-    const [caracterResponses, setCaracterResponses] = useState({})
+    const [caracterResponses, setCaracterResponses] = useState({
+                name: '',
+                born: '',
+                title: '',
+                actor: '',
+    })
 
+    // const [datareceived, setDataReceived] = useState (false)
     // console.log('props =>', props.randomNum)
 
     useEffect(()=>{
 
-         let ENumber = Math.floor((Math.random() * 10) + 1)
+         let randomNumber = Math.floor((Math.random() * 8) + 1)
+         let ENumber = Math.floor((Math.random() * randomNumber) + 10)
        
             GetCaracters(ENumber)
-
+            // setDataReceived(true)
     }, [])
    
     const GetCaracters = async (e) => {
@@ -23,25 +30,40 @@ const Caracter = (props) => {
             console.log('findCaracters', findCaracters.data)
 
             setCaracterResponses({
-                name: findCaracters.name,
-                born: findCaracters.born,
+                name: findCaracters.data.name,
+                born: findCaracters.data.born,
                 title: findCaracters.data.aliases[0],
-                actor: findCaracters.playedBy,
+                actor: findCaracters.data.playedBy[0],
             })
             
         } catch(error){
             console.log('error in try/catch in GetCaracters', error)
         }
        
-        // console.log('caracterResponses', caracterResponses)
     }
+    console.log('caracterResponses', caracterResponses)
 
     return (
         <div className="caracter">
-        <p>Name {caracterResponses.name}</p>    
-        <p>Born {caracterResponses.born}</p>
-        <p>Title {caracterResponses.title}</p>
-        <p>Actor {caracterResponses.actor}</p>
+            { (caracterResponses.name === '') 
+            ? <p className="noDataFromAPI">Name not stated in API</p>
+            : <p className="dataFromAPI">Name {caracterResponses.name}</p>    
+            }
+
+            { (caracterResponses.born === '') 
+            ? <p className="noDataFromAPI">Place of birth not stated in API</p>
+            : <p className="dataFromAPI">Born {caracterResponses.born}</p>
+            }
+
+            { (caracterResponses.title === '')
+            ? <p className="noDataFromAPI">Title not statet in API</p>
+            : <p className="dataFromAPI">Title {caracterResponses.title}</p>
+            }
+
+            { (caracterResponses.actor === '')
+            ? <p className="noDataFromAPI">Actor not stated in API</p>
+            : <p className="dataFromAPI">Actor {caracterResponses.actor}</p>
+            }
         </div>
     )
 

@@ -5,15 +5,14 @@
   display: flex;
   justify-content: center;
   box-sizing: border-box;
-
 }
 
 .body {
   width: 375px;
   height: 100%;
   margin: 0;
-  padding: 5px;
   box-sizing: border-box;
+  border: 1px solid gray;
 }
 
 /* ======== Header ======== */
@@ -62,16 +61,34 @@
 /* ======== Caracters ======== */
 
 .CaractersSection {
+  margin-top: 2em;
   width: 100%;
   min-height: 500px;
-  background-color: turquoise;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 5px;
+
 }
 
+.caracterImg {
+  max-width: 90%;
+  padding: 5px;
+}
 .caracter {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding: 5px;
+}
+
+.caracter p:first-child{
+  font-weight: bolder;
+}
+
+.noDataFromAPI {
+  font-size: 8px;
+}
+
+.dataFromAPI {
+  color: red;
 }
