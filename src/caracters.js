@@ -8,26 +8,24 @@ import Theon from './resources/images/landing-page-screenshot-2020-03-03-at-1127
 
 
 const Caracters = () => {
- 
 
-    let randomNum = 10
     return (
 <div className="CaractersSection">    
-            <div>
+            <div className="caractersDisplayed">
                 <img className="caracterImg" src={Daenarys} alt="Daenarys"></img>
-                <Caracter randomNum={randomNum}/>
+                <Caracter/>
             </div>
-            <div>
+            <div className="caractersDisplayed">
                 <img className="caracterImg" src={Arya} alt="Arya"></img>
-                <Caracter randomNum={randomNum}/>
+                <Caracter/>
             </div>
-            <div>
+            <div className="caractersDisplayed">
                 <img className="caracterImg" src={Cersei} alt="Cersei"></img>
-                <Caracter randomNum={randomNum}/>
+                <Caracter/>
             </div>
-            <div>
+            <div className="caractersDisplayed">
                 <img className="caracterImg" src={Theon} alt="Theon"></img>
-                <Caracter randomNum={randomNum}/>
+                <Caracter/>
             </div>
 
         {/* caracterResponses={caracterResponses} */}

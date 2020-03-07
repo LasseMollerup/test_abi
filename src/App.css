@@ -9,7 +9,7 @@
 
 .body {
   width: 375px;
-  height: 100%;
+  min-height: 100%;
   margin: 0;
   box-sizing: border-box;
   border: 1px solid gray;
@@ -63,32 +63,38 @@
 .CaractersSection {
   margin-top: 2em;
   width: 100%;
-  min-height: 500px;
+  max-height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 5px;
-
 }
 
+.caractersDisplayed {
+  height: 80%;
+}
 .caracterImg {
   max-width: 90%;
   padding: 5px;
 }
 .caracter {
+  height: 200px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: space-evenly;
   padding: 5px;
+  text-align: left;
+  line-height: 0.8em;
 }
 
-.caracter p:first-child{
+.name{
   font-weight: bolder;
 }
 
-.noDataFromAPI {
-  font-size: 8px;
+.noDataFromAPI span {
+  font-style: italic;
 }
 
-.dataFromAPI {
-  color: red;
+.dataFromAPI span {
+  font-weight: bold;
 }

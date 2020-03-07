@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
-const Caracter = (props) => {
+const Caracter = () => {
 
     const [caracterResponses, setCaracterResponses] = useState({
                 name: '',
@@ -46,23 +46,23 @@ const Caracter = (props) => {
     return (
         <div className="caracter">
             { (caracterResponses.name === '') 
-            ? <p className="noDataFromAPI">Name not stated in API</p>
-            : <p className="dataFromAPI">Name {caracterResponses.name}</p>    
+            ? <p className="noDataFromAPI"> <span className="name">Name:</span> <span>not stated in API</span></p>
+            : <p className="dataFromAPI name">Name: <span>{caracterResponses.name}</span></p>    
             }
 
             { (caracterResponses.born === '') 
-            ? <p className="noDataFromAPI">Place of birth not stated in API</p>
-            : <p className="dataFromAPI">Born {caracterResponses.born}</p>
+            ? <p className="noDataFromAPI">Born: <span>not stated in API</span></p>
+            : <p className="dataFromAPI">Born: <span>{caracterResponses.born}</span></p>
             }
 
             { (caracterResponses.title === '')
-            ? <p className="noDataFromAPI">Title not statet in API</p>
-            : <p className="dataFromAPI">Title {caracterResponses.title}</p>
+            ? <p className="noDataFromAPI">Title: <span>not statet in API</span></p>
+            : <p className="dataFromAPI">Title: <span>{caracterResponses.title}</span></p>
             }
 
             { (caracterResponses.actor === '')
-            ? <p className="noDataFromAPI">Actor not stated in API</p>
-            : <p className="dataFromAPI">Actor {caracterResponses.actor}</p>
+            ? <p className="noDataFromAPI">Actor: <span>not stated in API</span></p>
+            : <p className="dataFromAPI">Actor: <span>{caracterResponses.actor}</span></p>
             }
         </div>
     )
