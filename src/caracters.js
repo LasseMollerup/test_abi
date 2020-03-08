@@ -12,42 +12,47 @@ import Theon from './resources/images/landing-page-screenshot-2020-03-03-at-1127
 
 
 
-const Caracters = () => {
+const Caracters = (props) => {
 
-    const [beenClicked, setBeenClicked] = useState(false)
+    //State to check if subscription is done
+    const [subscription, setSubscription] = useState(false)
 
-    const handleClick = () => {
+    const [sub, setSub] = useState(false)
 
-        alert("Hello")
+    // function to set states regarding states of subscription in different components.
+    const handleSubscription = () => {
+        if (subscription === false) {
+            setSubscription(true)
+            setSub(true)
+            props.handleInviteClick()
+        }
     }
 
     return (
-<div className="CaractersSection">    
+        <div className="CaractersSection">
             <div className="caractersDisplayed">
                 <img className="caracterImg" src={Daenarys} alt="Daenarys"></img>
-                <Caracter/>
-                <Invite handleClick={handleClick}/>
+                <Caracter sub={sub} />
+                <Invite handleInviteClick={props.handleInviteClick} InviteBeenClicked={props.InviteBeenClicked} handleSubscription={handleSubscription} />
             </div>
             <div className="caractersDisplayed">
                 <img className="caracterImg" src={Arya} alt="Arya"></img>
-                <Caracter/>
-                <Invite/>
+                <Caracter />
+                <Invite handleInviteClick={props.handleInviteClick} InviteBeenClicked={props.InviteBeenClicked} />
             </div>
             <div className="caractersDisplayed">
                 <img className="caracterImg" src={Cersei} alt="Cersei"></img>
-                <Caracter/>
-                <Invite/>
+                <Caracter />
+                <Invite handleInviteClick={props.handleInviteClick} InviteBeenClicked={props.InviteBeenClicked} />
+
             </div>
             <div className="caractersDisplayed">
                 <img className="caracterImg" src={Theon} alt="Theon"></img>
-                <Caracter/>
-                <Invite/>
+                <Caracter />
+                <Invite handleInviteClick={props.handleInviteClick} InviteBeenClicked={props.InviteBeenClicked} />
             </div>
-
-        {/* caracterResponses={caracterResponses} */}
         </div>
     )
-
 }
 
 export default Caracters

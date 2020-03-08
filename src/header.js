@@ -14,11 +14,10 @@ const Header = () => {
                 <div className="symbols">
                     <img className="SignalStrengh" alt="SignalStrengh" src={signal}></img>
                     <img className="WifiSymbol" alt="WifiSymbol" src={wifi}></img>
-                    <div className="BatteryLevel" alt="batteryLevel"></div>                
+                    <div className="BatteryLevel" alt="batteryLevel"></div>
                 </div>
             </div>
-                <img className="whatRU" src={whatRU} alt="What_House_Are_You_Heading"></img>
-
+            <img className="whatRU" src={whatRU} alt="What_House_Are_You_Heading"></img>
         </div>
     )
 }
