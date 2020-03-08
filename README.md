@@ -11,4 +11,4 @@ Extract all info from the Sketch file and use this API (https://anapioficeandfir
 Keywords: S3, Cloudfront, Route53 - 2 point
 
 
-Could not complete task 3. Seemed that I was missing user ID for my requests to be resolved by the API. 
+Could not complete task 2. Seemed that I was missing user ID for my requests to be resolved by the API. 
